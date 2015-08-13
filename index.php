@@ -18,6 +18,7 @@
 <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
 <script src="ie/ie-emulation-modes-warning.js"></script>
+<script src="index.js"> </script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -27,7 +28,7 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed"
@@ -62,21 +63,26 @@
 			</p>
 			<div class = "seletor">
 			<select class="form-control" id = "nomesBase">
-			<option>Brasil</option>
-			<option>Geominas</option>
-			<option>Montese</option>
+			<?php 
+			include ('selectProj.php'); 
+			criaHtmlBasesDisponiveis(dirname(__FILE__)."/bases");
+			?>
 			</select>
+
+<!-- 			<a href = "http://aqui.io/geosql/"><button type="button" class="btn btn-success" id = "botaoIniciar" > -->
+<!-- 			<span class="glyphicon glyphicon-play" aria-hidden="true"></span> -->
+<!-- 			Iniciar</button></a> -->
 			
-			<a href = "http://aqui.io/geosql/"><button type="button" class="btn btn-success" id = "botaoIniciar" >
+			<button type="button" class="btn btn-success" id = "botaoIniciar"  onclick = "getBaseNameEscolhida();">
 			<span class="glyphicon glyphicon-play" aria-hidden="true"></span>
-			Iniciar</button></a>
+			Iniciar</button>
 			</div>
-			
+
 			<div class="mastfoot">
 				<div class="inner">
 					<div class="rodape-institucional" id = "rodape">
 					<p>
-						<a href="http://www.dcc.ufmg.br">Departamento de Ciência da Computação</a> - 
+						<a href="http://www.dcc.ufmg.br">Departamento de Ciência da Computação</a> -
 						<a href="http://www.ufmg.br">UFMG</a>
 					</p>
 					</div>
@@ -96,7 +102,6 @@
 
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	<script src="ie/ie10-viewport-bug-workaround.js" type="text/javascript"></script>
-
 
 </body>
 </html>
